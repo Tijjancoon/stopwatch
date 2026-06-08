@@ -7,12 +7,11 @@ function Stopwatch() {
   const intervalRef = useRef(null);
 
   const start = () => {
-    if (!isRunning) return;
-      setIsRunning(true);
-      intervalRef.current = setInterval(() => {
-        setTime((prev) => prev + 10);
-      }, 10);
-    }
+    if (isRunning) return;
+    setIsRunning(true);
+    intervalRef.current = setInterval(() => {
+      setTime((prev) => prev + 10);
+    }, 10);
   };
 
   const stop = () => {
